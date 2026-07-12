@@ -21,8 +21,9 @@ export default {
       const user = interaction.options.getUser("target") || interaction.user;
       const avatarUrl = user.displayAvatarURL({ size: 2048, dynamic: true });
 
-      const embed = createEmbde ({         
-        title: `$here's {user.username}'s Avatar`, 
+      const embed = createEmbde({         
+        title: `${user.username}'s Avatar`, 
+        description: `[Download Link](${avatarUrl})`  
       })
         .setImage(avatarUrl);
 
