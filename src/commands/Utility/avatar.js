@@ -6,7 +6,7 @@ import { handleInteractionError } from '../../utils/errorHandler.js';
 import { InteractionHelper } from '../../utils/interactionHelper.js';
 export default {
     data: new SlashCommandBuilder()
-    .setName("av")
+    .setName("avatar")
     .setDescription("Display a user's avatar image")
     .addUserOption((option) =>
       option
@@ -39,7 +39,7 @@ export default {
         stack: error.stack,
         userId: interaction.user.id,
         guildId: interaction.guildId,
-        commandName: 'avatar'
+        commandName: 'av'
       });
       await handleInteractionError(interaction, error, {
         commandName: 'avatar',
