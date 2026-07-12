@@ -21,12 +21,12 @@ export default {
       const user = interaction.options.getUser("target") || interaction.user;
       const avatarUrl = user.displayAvatarURL({ size: 2048, dynamic: true });
 
-      const({         
+      const embed = createEmbde ({         
         title: `$here's {user.username}'s Avatar`, 
       })
         .setImage(avatarUrl);
 
-      await InteractionHelper.safeReply });
+      await InteractionHelper.safeReply (interaction, { embeds: [embed] });
       logger.info(`Avatar command executed`, {
         userId: interaction.user.id,
         targetUserId: user.id,
